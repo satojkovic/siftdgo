@@ -13,7 +13,7 @@ var Commands = []cli.Command{
 
 var commandShow = cli.Command{
 	Name:  "show",
-	Usage: "",
+	Usage: "show SIFT keypoints and descriptor",
 	Description: `
 `,
 	Action: doShow,

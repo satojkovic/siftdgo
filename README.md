@@ -3,7 +3,13 @@ siftdgo
 
 ## Description
 
+A simple tool for extracting SIFT feature in Go
+
 ## Usage
+
+```bash
+$ siftdgo sample.jpg
+```
 
 ## Install
 

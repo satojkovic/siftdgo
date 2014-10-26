@@ -10,7 +10,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "siftdgo"
 	app.Version = Version
-	app.Usage = ""
+	app.Usage = "SIFT descriptor in Go "
 	app.Author = "satojkovic"
 	app.Email = "satojkovic@gmail.com"
 	app.Commands = Commands
