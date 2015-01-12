@@ -1,9 +1,13 @@
 package main
 
 import (
+	"bytes"
+	"flag"
 	"fmt"
 	"image"
 	"image/jpeg"
+	"io/ioutil"
+	"log"
 	"os"
 )
 
@@ -15,15 +19,31 @@ func init() {
 
 // main function
 func main() {
-	imgfile, err := os.Open(os.Args[1])
-	if err != nil {
-		fmt.Printf("usage: %s <imagefile>\n", os.Args[0])
+	args := flag.Args()
+	if len(args) < 1 {
+		fmt.Fprintf(
+			os.Stderr,
+			"usage: %s <imagefile>\n",
+			os.Args[0],
+		)
 		os.Exit(-1)
 	}
-	defer imgfile.Close()
 
-	img, _, err := image.Decode(imgfile)
+	b, err := ioutil.ReadFile(os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	conf, _, err := image.DecodeConfig(bytes.NewBuffer(b))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	img, _, err := image.Decode(bytes.NewBuffer(b))
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// Compute SIFT descriptor
-	Sift(img)
+	Sift(conf.Width, conf.Height, img)
 }
