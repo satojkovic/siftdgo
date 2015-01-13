@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"flag"
 	"fmt"
 	"image"
 	"image/jpeg"
@@ -19,8 +18,8 @@ func init() {
 
 // main function
 func main() {
-	args := flag.Args()
-	if len(args) < 1 {
+	args := os.Args
+	if len(args) == 1 {
 		fmt.Fprintf(
 			os.Stderr,
 			"usage: %s <imagefile>\n",
