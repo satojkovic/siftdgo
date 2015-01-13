@@ -19,16 +19,6 @@ To install, use `go get`:
 $ go get -d github.com/satojkovic/siftdgo
 ```
 
-## Contribution
+## Reference
 
-1. Fork ([https://github.com/satojkovic/siftdgo/fork](https://github.com/satojkovic/siftdgo/fork))
-1. Create a feature branch
-1. Commit your changes
-1. Rebase your local changes against the master branch
-1. Run test suite with the `go test ./...` command and confirm that it passes
-1. Run `gofmt -s`
-1. Create new Pull Request
-
-## Author
-
-[satojkovic](https://github.com/satojkovic)
+[SIFTを1から組むブログ](http://d.hatena.ne.jp/colorcle/20090629/1246292723)
